@@ -1,0 +1,7 @@
+<div class="day" [class.not-in-month]="notInMonth()" (click)="openAlert()"
+     [class.freeday]="freeday()" [class.workday]="workDay()" [class.current-day]="currentDay()"
+     [class.work-hours]="workHours()">
+  <div>
+    {{day.format('DD')}}
+  </div>
+</div>

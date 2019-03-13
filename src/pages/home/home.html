@@ -1,17 +1,61 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>Календарь</ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+  <div class="data-changer">
+    <button ion-button icon-only clear (click)="calendar.prevMonth()">
+      <ion-icon name="arrow-back"></ion-icon>
+    </button>
+    <ion-list>
+      <ion-item>
+        <ion-select [(ngModel)]="calendar.currentMonth" cancelText="Отменить" okText="Выбрать">
+          <ion-option value="0">{{mmt().month(0).format('MMMM')}}</ion-option>
+          <ion-option value="1">{{mmt().month(1).format('MMMM')}}</ion-option>
+          <ion-option value="2">{{mmt().month(2).format('MMMM')}}</ion-option>
+          <ion-option value="3">{{mmt().month(3).format('MMMM')}}</ion-option>
+          <ion-option value="4">{{mmt().month(4).format('MMMM')}}</ion-option>
+          <ion-option value="5">{{mmt().month(5).format('MMMM')}}</ion-option>
+          <ion-option value="6">{{mmt().month(6).format('MMMM')}}</ion-option>
+          <ion-option value="7">{{mmt().month(7).format('MMMM')}}</ion-option>
+          <ion-option value="8">{{mmt().month(8).format('MMMM')}}</ion-option>
+          <ion-option value="9">{{mmt().month(9).format('MMMM')}}</ion-option>
+          <ion-option value="10">{{mmt().month(10).format('MMMM')}}</ion-option>
+          <ion-option value="11">{{mmt().month(11).format('MMMM')}}</ion-option>
+        </ion-select>
+      </ion-item>
+    </ion-list>
+    <button ion-button icon-only clear (click)="calendar.nextMonth()">
+      <ion-icon name="arrow-forward"></ion-icon>
+    </button>
+  </div>
+  <div class="calendar">
+    <day *ngFor="let day of calendar.days()" [day]="day"></day>
+  </div>
+  <ion-card>
+    <ion-card-header>
+      <div class="current-day-header day-header center">Текущий день:</div>
+      <div class="current-day-header day-header center"><span
+        class="bold">{{calendar.currentDay.format('DD MMMM (dddd)')}}</span>
+        <button ion-button icon-only clear *ngIf="!calendar.equalsSelected()" class="refresh-button"
+                (click)="calendar.selectedDay = mmt(calendar.currentDay)">
+          <ion-icon name="refresh"></ion-icon>
+        </button>
+      </div>
+      <button ion-button icon-only clear class="need-work" (click)="calendar.setNeedWork()">
+        <ion-icon name="calendar"></ion-icon>
+      </button>
+      <div class="day-header center">
+        Отработано за <span class="bold">{{calendar.selectedDay.format('MMMM YYYY')}}:</span>
+      </div>
+      <div class="day-header center">
+        <span class="bold">{{setting.numberToTime(calendar.calculateWorked())}} с</span>  <span class="bold">{{calendar.needWork()}}</span>
+      </div>
+      <div class="day-header center">
+        <span class="bold">{{calendar.statusWork()}}</span>
+      </div>
+    </ion-card-header>
+  </ion-card>
 </ion-content>

@@ -1,0 +1,50 @@
+day {
+  width: 14%;
+  display: flex;
+  justify-content: center;
+  .day {
+    margin: 5px 0;
+    min-width: 34px;
+    height: 34px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 20px;
+    font-weight: 700;
+    border-radius: 2px;
+  }
+
+  .not-in-month {
+    color: #a5a5a5;
+  }
+
+  .freeday:not(.not-in-month) {
+    color: #cd3e00;
+  }
+
+  .workday:not(.not-in-month) {
+    background: #2979FF;
+  }
+  .workday:not(.not-in-month):not(.freeday) {
+    color: #f2f2f2;
+  }
+  .workday:not(.not-in-month).freeday {
+    color: #ff692f;
+  }
+
+  .current-day {
+    border-bottom: solid 6px #4CAF50;
+    border-top: solid 6px transparent;
+  }
+  .selected-day:not(.current-day) {
+    border-bottom: solid 6px transparent;
+    border-top: solid 6px #E53935;
+  }
+
+  .work-hours:not(.not-in-month) {
+    border-left: solid 6px #cc4537;
+    border-right: solid 6px transparent;
+  }
+
+}
+

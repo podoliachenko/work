@@ -1,11 +1,11 @@
 {
-  "name": "Ionic",
-  "short_name": "Ionic",
+  "name": "Календарь",
+  "short_name": "Календарь",
   "start_url": "index.html",
   "display": "standalone",
   "icons": [{
     "src": "assets/imgs/logo.png",
-    "sizes": "512x512",
+    "sizes": "1600x1600",
     "type": "image/png"
   }],
   "background_color": "#4e8ef7",

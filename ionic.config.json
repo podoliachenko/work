@@ -1,5 +1,7 @@
 {
   "name": "./WorkCalendar",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "ionic-angular"
 }

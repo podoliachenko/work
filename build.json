@@ -1,0 +1,18 @@
+{
+     "android": {
+         "debug": {
+             "keystore": "C:\\keystore",
+             "storePassword": "08051997d",
+             "alias": "io.podolachenko.work_calendar",
+             "password" : "08051997d",
+             "keystoreType": "pkcs12"
+         },
+         "release": {
+             "keystore": "C:\\keystore",
+             "storePassword": "08051997d",
+             "alias": "io.podolachenko.work_calendar",
+             "password" : "08051997d",
+             "keystoreType": "pkcs12"
+         }
+     }
+ }

@@ -1,3 +1,69 @@
 page-home {
 
 }
+
+.red-test {
+  width: 20px;
+  height: 20px;
+  background: red;
+}
+
+.data-changer {
+  display: flex;
+  justify-content: space-between;
+
+  ion-list {
+    flex-grow: 1;
+
+    .input-wrapper {
+      display: flex;
+      justify-content: center;
+      ion-select {
+        flex-grow: 1;
+      }
+    }
+  }
+}
+
+.calendar {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+ion-card-header {
+  font-size: 18px;
+  position: relative;
+  .bold {
+    font-weight: 700;
+    margin-left: 4px;
+  }
+  .refresh-button {
+    position: absolute;
+    right: 42px;
+    top: 0;
+  }
+  .need-work {
+    position: absolute;
+    right: 0;
+    top: 0;
+  }
+}
+
+.day-header {
+  height: 40px;
+  display: flex;
+  align-items: center;
+}
+
+.from {
+  justify-content: center;
+  .bold {
+    margin-left: 0;
+  }
+}
+
+.center {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

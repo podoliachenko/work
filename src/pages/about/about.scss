@@ -1,3 +1,18 @@
 page-about {
+  .center {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+
+  .bold {
+    font-size: 20px;
+    font-weight: 700;
+  }
+
+  .param {
+    margin-bottom: 40px;
+  }
 
 }
+

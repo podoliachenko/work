@@ -1,11 +1,76 @@
 <ion-header>
   <ion-navbar>
     <ion-title>
-      About
+      Настройки
     </ion-title>
   </ion-navbar>
 </ion-header>
 
 <ion-content padding>
-
+  <div class="param">
+    <div class="header-param" class="center bold">
+      Смещение дней:
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.offsetReduce()">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 class="center bold">
+            {{setting.offset}}
+        </ion-col>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.offsetIncrease()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+<div class="param">
+    <div class="header-param" class="center bold">
+      Количество рабочих дней:
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.workdayReduce()">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 class="center bold">
+            {{setting.workday}}
+        </ion-col>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.workdayIncrease()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
+<div class="param">
+    <div class="header-param" class="center bold">
+      Количество выходных дней:
+    </div>
+    <ion-grid>
+      <ion-row>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.freedayReduce()">
+            <ion-icon name="remove"></ion-icon>
+          </button>
+        </ion-col>
+        <ion-col col-4 class="center bold">
+            {{setting.freeday}}
+        </ion-col>
+        <ion-col col-4 class="center bold">
+          <button ion-button clear icon-only (click)="setting.freedayIncrease()">
+            <ion-icon name="add"></ion-icon>
+          </button>
+        </ion-col>
+      </ion-row>
+    </ion-grid>
+  </div>
 </ion-content>
